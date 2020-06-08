@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':BaseLibrary', ':Provider', ':UserCenter'
 rootProject.name='kotlinMall'
