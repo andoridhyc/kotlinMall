@@ -22,7 +22,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
@@ -45,4 +51,15 @@ dependencies {
     // Coroutine listeners for Anko Layouts
     api "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version"
     api "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version"
+
+    //rxkotlin与rxAndroid
+    api "io.reactivex:rxkotlin:1.0.0"
+    api 'io.reactivex:rxandroid:1.2.1'
+
+    //Retrofit
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:adapter-rxjava:2.9.0'
+    api "com.squareup.okhttp3:okhttp:4.7.2"
+    api "com.squareup.okhttp3:logging-interceptor:4.7.2"
 }

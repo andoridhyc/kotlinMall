@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hyc.baselibrary.ui.activity.BaseMvpActivity
 import com.hyc.usercenter.R
+import com.hyc.usercenter.data.repository.UserRepository
 import com.hyc.usercenter.presenter.RegisterPresenter
 import com.hyc.usercenter.presenter.view.RegisterView
 import kotlinx.android.synthetic.main.activity_register.*
@@ -23,8 +24,9 @@ class RegisterActivity :BaseMvpActivity<RegisterPresenter>(),RegisterView{
         setContentView(R.layout.activity_register)
         mPersenter= RegisterPresenter()
         mPersenter.mView=this
+
         mRegisterBtn.setOnClickListener {
-            mPersenter.register("","")
+            mPersenter.register(mMobileEt.text.toString(),mVerifyCodeEt.text.toString(),mPwdEt.text.toString())
         }
     }
 }
